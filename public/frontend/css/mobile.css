@@ -1,0 +1,199 @@
+header .container .logo {
+    width: 90%;
+}
+
+header .container .menu {
+	position: absolute;
+	width: 100%;
+	display: none;
+}
+
+header .container .menu ul {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	z-index: 9999;
+	width: 100%;
+	background: #515b88;
+	min-height: 198px;
+	top: 60px;
+}
+
+header .container .menu ul li, header .container .menu ul li a {
+	display: block;
+	width: 100%;
+}
+
+ header .container .menu ul li a {
+ 	color: #FFF;
+ 	border-bottom: 1px solid #ccc;
+ 	line-height: 32px;
+ }
+
+header .container .icon {
+	width: 10%;
+}
+
+header .container div.logo a {
+	font-size: 18px;
+	text-indent: 20px;
+	display: block;
+}
+
+header .container .icon .wrap {
+	display: flex;
+}
+
+header .container, header {
+	height: 60px;
+}
+
+slider {
+	max-height: 120px;
+}
+
+slider .slide-item h2 {
+	left: 0px;
+	top: 20%;
+}
+
+slider .slide-item h2 span {
+	margin-bottom: -15px;
+}
+
+slider .slide-item h2 small, slider .slide-item h2 span {
+	font-size: 15px;
+	margin-left: 25px;
+	letter-spacing: 2px;
+}
+
+/**Best Seller**/
+best-seller {
+	margin-top: 0px;
+}
+
+best-seller ul {
+	flex-wrap: wrap;
+}
+
+best-seller ul li:first-child {
+	width: 100%;
+}
+
+best-seller ul li {
+	width: 48%;
+	margin-left: 5px;
+}
+
+best-seller ul li img {
+	max-width: 180px;
+	width: 100%;
+}
+
+/*Shipping*/
+
+shipping ul {
+	flex-wrap: wrap;
+}
+
+shipping ul li {
+	width: 50%;
+	margin-bottom: 30px;
+}
+
+/*Promotion*/
+
+promotion ul {
+	flex-direction: column;
+}
+
+promotion ul li.active {
+	width: 100%;
+}
+
+/*Product Feature*/
+
+product-feature ul {
+	flex-wrap: wrap;
+}
+
+product-feature ul li {
+	width: 48%;
+	margin-right: 0px;
+	margin-left: 5px;
+}
+
+product-feature ul li img {
+	width: 100%;
+	max-width: 180px;
+}
+
+product-feature small {
+	margin-bottom: 20px;
+}
+
+/*Footer*/
+
+footer ul {
+	flex-wrap: wrap;
+}
+
+footer ul li:first-child {
+	width: 100%;
+	min-height: 150px;
+	padding: 10px;
+}
+
+footer ul li:first-child h3 {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+footer ul li:first-child p {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+
+footer ul li:first-child h3, footer ul li:first-child p {
+	margin-left: 0px;
+}
+
+footer ul li:last-child {
+	width: 100%;
+	flex-wrap: wrap;
+}
+
+footer ul li:last-child span {
+	width: 50%;
+	height: 150px;
+}
+
+footer ul li:last-child span.one {
+	background-position: 15px 0px;
+}
+
+footer ul li:last-child span.two {
+	background-position: -200px 0px;
+}
+
+footer ul li:last-child span.three {
+	background-position: -450px 0px;
+}
+
+footer ul li:last-child span.four {
+	background-position: -670px 0px;
+}
+
+footer .copyright {
+	flex-direction: column;
+	height: auto;
+}
+
+footer .copyright p {
+	width: 100%;
+}
+
+footer .copyright div.social {
+	width: 100%;
+}
