@@ -35,7 +35,8 @@
 			// Code chuyển ảnh
 			$('.thumb img').click(function() {
 				let imgPath = $(this).attr('src')
-				$('img.main').attr('src', imgPath)
+				$('img.main').attr('src', imgPath);
+				return false;
 			})
 
 			$('.modal').click(function() {

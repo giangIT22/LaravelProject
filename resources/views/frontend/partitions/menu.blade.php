@@ -7,7 +7,7 @@
         <div class="icon">
             <div class="wrap">
                 <span class="cart">
-                    <small>3</small>
+                    <small>{{ totalCart() }}</small>
                 </span>
                 <span class="search"></span>
                 <span class="more"></span>

@@ -6,11 +6,13 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Services\SliderService;
 use App\Services\ProductService;
+// use App\Services\CartService;
 
 class HomeController extends Controller
 {   
     protected $sliderService;
     protected $productService;
+    // protected $cartServices;
     
     public function __construct(SliderService $sliderService, ProductService $productService)
     {   
@@ -22,7 +24,7 @@ class HomeController extends Controller
         return view('frontend.home.index',[
             'sliderService'     => $this->sliderService->all(),
             'bestSell'          => $this->productService->bestSell(),
-            'featureProducts'   => $this->productService->featureProducts()
+            'featureProducts'   => $this->productService->featureProducts(),
         ]);
     }
 }

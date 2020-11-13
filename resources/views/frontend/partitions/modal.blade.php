@@ -14,7 +14,10 @@
                 <img src="{{asset('frontend/images/sp5.jpg')}}" />
                 <img src="{{asset('frontend/images/sp1.jpg')}}" />
                 <img src="{{asset('frontend/images/sp2.jpg')}}" />
-            
+                
+                <p>
+                    <a href="{{ route('frontend.cart.store', ['productId' =>1]) }}" title="Mua hàng">Mua ngay</a>
+                </p>
             </h1>
         </div>
     </div>

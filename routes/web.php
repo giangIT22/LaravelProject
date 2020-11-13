@@ -12,10 +12,21 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+// use Illuminate\Http\Request;
+// Route::get('goto-sesstion', function(Request $request){
+//     $giang = $request->session()->push('giang', 'giang dzai');
+//     $all = $request->session()->all();
+//     dd($all);
+// });
 
 Route::namespace('Frontend')->group(function(){
-    Route::get('/', 'HomeController@index');
+    Route::get('/', 'HomeController@index')->name('frontend.home');
 
    Route::get('{slug}', 'CategoryController@show')->name('frontend.category.show');
+   
+   Route::get('cart/{productId}', 'CartController@store')->name('frontend.cart.store');
 
 });
+
+
+

@@ -22,4 +22,8 @@ class ProductService{
                         ->where('category_product.category_id', $categoryId)->get();
     }
 
+    public function findById($id){
+        return Product::find($id);
+    }
+
 }
