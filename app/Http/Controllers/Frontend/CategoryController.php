@@ -22,7 +22,7 @@ class CategoryController extends Controller
         $category = $this->CategoryService->findBySlug($slug);        
         $featureProducts = $this->productService->getProductsByIdCategory($category->id);  
         return view('frontend.categories.show',[
-            'headTitle'             => $category->name,
+            'headTitle'             => $category->name ?? null,
             'featureProducts'       => $featureProducts
         ]);
     }

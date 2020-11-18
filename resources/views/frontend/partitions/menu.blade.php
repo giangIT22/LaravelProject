@@ -6,9 +6,11 @@
         <x-menu></x-menu>
         <div class="icon">
             <div class="wrap">
-                <span class="cart">
-                    <small>{{ totalCart() }}</small>
-                </span>
+                <a href="{{ route('frontend.cart.index') }}">
+					<span class="cart">
+						<small>{{ totalCart() }}</small>
+					</span>
+				</a>
                 <span class="search"></span>
                 <span class="more"></span>
             </div>
