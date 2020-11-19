@@ -60,6 +60,7 @@ class CartController extends Controller
                     'status' => false
                 ]);
             }
+     
 
             $customer       = $this->customerService->save($request->all()); //thêm customer
             $order          = $this->orderService->save(['customer_id' => $customer->id]);//thêm order cho customer
@@ -71,7 +72,7 @@ class CartController extends Controller
             session()->forget('cart');//xóa sesstion 
 
             return response()->json([ 
-               'message' => 'success',
+               'message' => 'successlyly',
                'status'  => true
             ]);
 

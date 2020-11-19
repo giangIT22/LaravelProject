@@ -7,8 +7,8 @@
         <ul>
             @foreach ($featureProducts as $product)
                 <li>
-                    <img src="{{ $product->image}}" />
-                    <a href="">{{ $product->name}}</a>
+                    <img src="{{ asset($product->image)}}" class="product-modal-detail" data-id="{{ $product->id}}" />
+                    <a href="javascript:void(0)" class="product-modal-detail" data-id="{{ $product->id}}" >{{ $product->name}}</a>
                     <p>{{ number_format($product->price) }} vnd</p>
                 </li>
             @endforeach

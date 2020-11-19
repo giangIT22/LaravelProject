@@ -4,35 +4,24 @@ namespace App\Http\Controllers\Frontend;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Services\ProductService;
 class ProductController extends Controller
 {
-    public function index(){
-        $name = 'giang';
-        $email = 'long';
-        $htmlElement = "<strong>hello</strong>";
-        // return view('frontend.products.index')
-        //         ->with('name', $name)
-        //         ->with('email', $email);//truyền dữ liệu từ controller ra view bằng method with()
+    protected $productService;
 
-        // return view('frontend.products.index', compact('name', 'email'));//truyền dữ liệu từ controller ra view bằng method compact
-
-        return view('frontend.products.index',[
-            'name' => $name,
-            'email'=> $email,
-            'htmlElement' => $htmlElement
-        ]);//truyền dữ liệu từ controller ra view bằng mảng , đây là cách hay dùng nhất
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
     }
 
-    public function show(){
-        $menus =[
-            'home',
-            'about',
-            'contact'
-        ];
+    public function show($productId){
+        $product = $this->productService->findById($productId);
 
-        return view('frontend.products.show_child',[
-            'menus' => $menus
+        if(!$product){
+            abort(404);
+        }
+        return view('frontend.products.show',[
+            'product' => $product
         ]);
     }
 }

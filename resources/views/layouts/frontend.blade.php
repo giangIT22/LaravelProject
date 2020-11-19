@@ -24,29 +24,27 @@
 				loop: true,
 			})
 
-			$('.more').click(function() {
+			$(document).on("click", '.more', function() {
 				$('.menu').slideToggle();
 			})
 
-			$('product-feature ul li').click(function() {
+			$(document).on("click", '.product-modal-detail', function() {
 				$('.modal').css('visibility', 'visible');
 				$("body").css("overflow", "hidden");
 				$('div.product-detail').attr('show', 1);
 			})
 
 			// Code chuyển ảnh
-			$('.thumb img').click(function() {
+			$(document).on("click", '.thumb img', function() {
 				let imgPath = $(this).attr('src')
 				$('img.main').attr('src', imgPath);
 				return false;
 			})
 
-			$('.modal').click(function() {
-				if ($('div.product-detail').attr('show') == 1) {
-					$(".modal").css("visibility", "hidden");
-					$('div.product-detail').attr('show') == 0;
-					$("body").css("overflow", "visible");
-				}
+			$(document).on("click", '.modal', function() {
+				$(".modal").css("visibility", "hidden");
+				$('div.product-detail').attr('show') == 0;
+				$("body").css("overflow", "visible");
 			})
 		})
 	</script>

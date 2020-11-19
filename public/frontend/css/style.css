@@ -538,8 +538,7 @@ footer .copyright div.social a.amex {
 }
 
 .product-detail img.main {
-	max-width: 640px;
-	max-height: 640px;
+	max-width: 333px;
 	width: 100%;
 	height: 100%;
 }

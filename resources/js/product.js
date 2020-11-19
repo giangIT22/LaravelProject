@@ -15,9 +15,24 @@ $('#checkout').click(function(){
 	  	}
 	}).then(function (response) {
 		if(response.data.status == true){
+			console.log(response.data);
 			alert('Successful');
 			window.location.reload();
 		}
+	}) 
+	.catch(function (error) {
+		console.log(error);
+	});
+})
+
+$('.product-modal-detail').click(function(){
+	let productId = $(this).data('id');
+
+	axios({
+		method: 'get',
+	  	url: `/product/show/${productId}`,
+	}).then(function (response) {
+		$('.modal').html(response.data);
 	}) 
 	.catch(function (error) {
 		console.log(error);

@@ -26,6 +26,8 @@ Route::namespace('Frontend')->group(function(){
         ->name('frontend.cart.index');
         
     Route::post('cart/checkout', 'CartController@checkout')->name('cart.checkout');
+
+    Route::get('product/show/{id}', 'ProductController@show')->name('product.show');
    
     Route::get('cart/{productId}', 'CartController@store')->name('frontend.cart.store');
 
