@@ -4,6 +4,17 @@ namespace App\Services;
 use App\Models\Product;
 
 class ProductService{
+
+    public function get($limit = 2, array $orders = [], array $params = []) {
+        $query = Product::query();
+        
+        if($orders){
+            $query->orderBy(...$orders);//...$order tác dụng giống như argument trong js , và nó sẽ chuyển đổi cái mảng
+                                        //$order đấy thành dãy cái tham số dầu vào của hàm
+        }
+        return $query->paginate($limit);     
+    }
+
     public function bestSell(){
         return Product::join('order_details', 'order_details.product_id', 'products.id')
                         ->selectRaw('sum(qty) as qty')
@@ -26,4 +37,29 @@ class ProductService{
         return Product::find($id);
     }
 
+
+    public function save(array $input, $id = null){// thêm sản phẩm
+        return Product::updateOrCreate(
+             ['id' => $id],
+             [
+                 'name'         => $input['name'], 
+                 'slug'         => $input['slug'],
+                 'price'        => $input['price'],
+                 'image'        => $input['image'] ?? null,
+                 'is_feature'   => $input['is_feature'] ?? 0,
+                 'meta_title'   => $input['meta_title'],
+                 'meta_desc'    => $input['meta_desc'],
+                 'keyword'      => $input['keyword'],
+             ]
+         ); 
+    }
+
+    public function delete(array $ids) {
+        return Product::destroy(...$ids);
+    }
+
+    public function attachCategory(Product $product, $categoryIds)
+    {
+        $product->categories()->sync($categoryIds);
+    }
 }

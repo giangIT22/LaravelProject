@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->id();
-            $table->integer('category_id')->nullable();
+            // $table->integer('category_id')->nullable();
             $table->string('name');
             $table->string('slug');
             $table->decimal('price', 17);//tối đa 17 kí tự

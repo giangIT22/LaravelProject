@@ -1,3 +1,4 @@
+//ajax gio hang 
 $('#checkout').click(function(){
     let name = $('#name').val();
     let email = $('#email').val();
@@ -25,6 +26,7 @@ $('#checkout').click(function(){
 	});
 })
 
+//ajax detail product
 $('.product-modal-detail').click(function(){
 	let productId = $(this).data('id');
 
