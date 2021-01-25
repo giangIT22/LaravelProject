@@ -26,11 +26,19 @@ Route::namespace('Api')->middleware(['api'])->prefix('v1')->group(function ($rou
     // });
 
     Route::middleware(['token.valid'])->group(function() {
-        Route::resource('category', 'CategoryController')
-        ->except(['show', 'edit', 'create']);//cách viết nhanh hơn so với cách viết route như bên trên
+        Route::resource('category', 'CategoryController')//cách viết nhanh hơn so với cách viết route như bên trên
+        ->except(['show', 'edit', 'create']);//tạo tự động ra các route khác ngoại trừ những cái route ở trong except sẽ không dc tạo
         
-        Route::resource('product', 'ProductController')
-        ->except(['show', 'edit', 'create']);//cách viết nhanh hơn so với cách viết route như bên trên
+        Route::resource('product', 'ProductController')//cách viết nhanh hơn so với cách viết route như bên trên
+        ->except(['show', 'edit', 'create']);
+
+        Route::resource('slider', 'SliderController')//cách viết nhanh hơn so với cách viết route như bên trên
+        ->except(['show', 'edit', 'create']);
+
+        Route::resource('order', 'OrderController')
+        ->except(['edit', 'create']);//cách viết nhanh hơn so với cách viết route như bên trên
+
+        Route::post('upload', 'UploadController@upload')->name('upload');
     });
         
 });

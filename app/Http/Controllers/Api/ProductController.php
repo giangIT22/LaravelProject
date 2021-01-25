@@ -29,9 +29,9 @@ class ProductController extends Controller
                 'data'   => [
                     'products' => $products->items(),
                     'meta' => [
-                        'total' => $products->total(),
-                        'current_page' => $products->currentPage(),
-                        'per_page' => $products->perPage(),
+                        'total' => $products->total(),//tổng số dòng dữ liệu
+                        'current_page' => $products->currentPage(),//thứ tự của trang hiện tại ví dụ trang 1, trang 2...
+                        'per_page' => $products->perPage(),//số item có trên 1 trang
                     ]
                 ]
             ]);
